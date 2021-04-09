@@ -87,7 +87,6 @@
 ;; -----------------------------------------------
 
 ;;; Luna Dashboard
-;; (load-library "luna-dashboard")
 (add-to-list 'load-path "~/.emacs.d/lm-dashboard")
 (require 'lm-dashboard)
 (lm-dashboard-startup-hook)
@@ -102,30 +101,30 @@
 (load-library "luna-keys")
 
 ;;; RPG modes
-(add-to-list 'load-path "~/.emacs.d/rpg")
-(require 'roll)
-(global-set-key (kbd "C-0") 'roll-save)
+;;(add-to-list 'load-path "~/.emacs.d/rpg")
+;;(require 'roll)
+;;(global-set-key (kbd "C-0") 'roll-save)
 
 ;;; Checksum
-(add-to-list 'load-path "~/.emacs.d/emacs-checksum")
-(require 'checksum)
+;;(add-to-list 'load-path "~/.emacs.d/emacs-checksum")
+;;(require 'checksum)
 
 ;;; Horn
-(add-to-list 'load-path "~/.emacs.d/emacs-horn")
-(require 'horn)
-(setq horn-default-list
-      '(("Dashboard" . lm-dashboard-refresh)
-	("New Scratch" . create-scratch-buffer)
+;;(add-to-list 'load-path "~/.emacs.d/emacs-horn")
+;;(require 'horn)
+;;(setq horn-default-list
+;;      '(("Dashboard" . lm-dashboard-refresh)
+;;	("New Scratch" . create-scratch-buffer)
 	;; ("Shell" . shell)
-	("Shell" . eshell)
-	("Deft" . deft)
-	("Magit" . magit)
-	("roll-save" . roll-save)
-	("rss" . newsticker-treeview)
-	("Slime" . slime)
-	("checksum" . checksum)
-	("gnus" . gnus)))
-(global-set-key (kbd "C-x C-x") 'horn-call-mode)
+;;	("Shell" . eshell)
+;;	("Deft" . deft)
+;;	("Magit" . magit)
+;;	("roll-save" . roll-save)
+;;	("rss" . newsticker-treeview)
+;;	("Slime" . slime)
+;;	("checksum" . checksum)
+;;	("gnus" . gnus)))
+;;(global-set-key (kbd "C-x C-x") 'horn-call-mode)
 
 ;;; Ignore active buffer while leaving
 (setq confirm-kill-processes nil)
