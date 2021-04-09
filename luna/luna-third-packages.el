@@ -195,7 +195,8 @@ The arguments and expected return value are as specified for
 ;; Various nice tools such as highlighting and taking notes
 ;; [https://github.com/politza/pdf-tools]
 (require 'pdf-tools)
-(pdf-loader-install)
+(when (not window-system)
+  (pdf-loader-install))
 (add-hook 'pdf-tools-enabled-hook #'auto-save-mode)
 (add-hook 'pdf-tools-enabled-hook
 	  (and
