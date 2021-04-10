@@ -88,8 +88,9 @@
 
 ;;; Luna Dashboard
 (add-to-list 'load-path "~/.emacs.d/lm-dashboard")
-(require 'lm-dashboard)
-(lm-dashboard-startup-hook)
+(when (display-graphic-p)
+  (require 'lm-dashboard)
+  (lm-dashboard-startup-hook))
 
 ;;; Emacs Libraries:
 (load-library "luna-emacs-packages")
@@ -170,7 +171,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(markdown-preview-mode indium tide emmet-mode add-node-modules-path web-mode racket-mode geiser elisp-slime-nav cider clojure-mode undo-tree which-key flycheck easy-kill hyperbole icomplete-vertical slime-company eshell-bookmark tramp use-package tracking pdf-tools move-text magit helpful god-mode elpher diff-hl deft dashboard)))
+   '(docker-tramp lfe-mode pdf-tools markdown-preview-mode indium tide emmet-mode add-node-modules-path web-mode racket-mode geiser elisp-slime-nav cider clojure-mode undo-tree which-key flycheck easy-kill hyperbole icomplete-vertical slime-company eshell-bookmark tramp use-package tracking move-text magit helpful god-mode elpher diff-hl deft dashboard)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
