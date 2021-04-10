@@ -37,6 +37,7 @@
 (global-unset-key (kbd "C-<backspace>"))  ; Custom delete function
 (global-unset-key (kbd "C-_"))            ; Create block comment ;;--------- etc
 (global-unset-key (kbd "C-x C-x"))        ; Alternative to M-x
+(global-unset-key (kbd "M-<SPC>"))        ; Set Mark Region (for CLI)
 ;; (global-unset-key (kbd ""))
 
 ;;; Unsetting for being annoying
@@ -67,6 +68,12 @@
 
 ;;; Emacs Functions:
 ;;; QoL Improvements:
+
+
+;;; set-mark-region for CLI
+;; -----------------------------------------------
+(global-set-key (kbd "M-<SPC>") 'set-mark-command)
+;; -----------------------------------------------
 
 
 ;;; eval-buffer shortcut

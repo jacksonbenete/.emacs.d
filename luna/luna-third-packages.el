@@ -62,7 +62,7 @@
   :config
   (setq completion-auto-help nil)
   (icomplete-mode)
-  (fido-mode)
+  (when (display-graphic-p) (fido-mode))
   (savehist-mode)
   (icomplete-vertical-mode)
   :bind (:map icomplete-minibuffer-map
@@ -194,19 +194,20 @@ The arguments and expected return value are as specified for
 ;; -----------------------------------------------
 ;; Various nice tools such as highlighting and taking notes
 ;; [https://github.com/politza/pdf-tools]
-(require 'pdf-tools)
-(when (not window-system)
-  (pdf-loader-install))
-(add-hook 'pdf-tools-enabled-hook #'auto-save-mode)
-(add-hook 'pdf-tools-enabled-hook
-	  (and
-	   (set (make-local-variable 'auto-save-interval) 2)
-	   (set (make-local-variable 'auto-save-visited-mode) t)))
-(with-eval-after-load 'pdf-tools
-  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
-  (define-key pdf-view-mode-map (kbd "M-h") 'pdf-annot-add-highlight-markup-annotation)
-  (define-key pdf-view-mode-map (kbd "M-l") 'pdf-annot-list-annotations)
-  (define-key pdf-view-mode-map (kbd "M-k") 'pdf-annot-delete))
+(when (display-graphic-p)
+  (require 'pdf-tools)
+  (when (eq window-system 'x)
+    (pdf-loader-install))
+  (add-hook 'pdf-tools-enabled-hook #'auto-save-mode)
+  (add-hook 'pdf-tools-enabled-hook
+	    (and
+	     (set (make-local-variable 'auto-save-interval) 2)
+	     (set (make-local-variable 'auto-save-visited-mode) t)))
+  (with-eval-after-load 'pdf-tools
+    (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
+    (define-key pdf-view-mode-map (kbd "M-h") 'pdf-annot-add-highlight-markup-annotation)
+    (define-key pdf-view-mode-map (kbd "M-l") 'pdf-annot-list-annotations)
+    (define-key pdf-view-mode-map (kbd "M-k") 'pdf-annot-delete)))
 ;; -----------------------------------------------
 
 
