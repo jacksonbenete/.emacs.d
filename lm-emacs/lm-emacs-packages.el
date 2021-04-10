@@ -1,10 +1,10 @@
-;; -------------------------------------------------------------------
-;; File: Luna Emacs Native Packages Customization
-;; Project: Luna Emacs
+;;; lm-emacs-packages.el --- Emacs Native Packages Customization
+;;; Commentary:
+;; Project: lm-emacs
 ;; Author: Jackson Benete Ferreira
 ;; Contact: <jacksonbenete@gmail.com>
 ;; -------------------------------------------------------------------
-
+;;; Code:
 
 ;;; Dired
 ;; -----------------------------------------------

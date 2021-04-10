@@ -1,7 +1,6 @@
 ;;; luna-modeline.el --- A headerline and a modeline style.
 ;; -----------------------------------------------
-;; File: Luna Emacs Style Configuration <luna-modeline.el>
-;; Project: Luna Emacs
+;; Project: lm-emacs
 ;; Author: Jackson Benete Ferreira
 ;; Contact: <jacksonbenete@gmail.com>
 ;; -----------------------------------------------
@@ -46,15 +45,15 @@
 ;; It will always be alike doesn't matter if active or inactive
 (set-face-attribute 'mode-line nil
                     :height 0.75
-                    :foreground (face-foreground 'luna-neutral-gray)
-                    :background (face-background 'luna-neutral-gray)
+                    :foreground (face-foreground 'lm-neutral-gray)
+                    :background (face-background 'lm-neutral-gray)
                     :overline nil
 		    :underline nil
 		    :box nil)
 (set-face-attribute 'mode-line-inactive nil
                     :height 0.75
-                    :foreground (face-foreground 'luna-neutral-gray)
-                    :background (face-background 'luna-neutral-gray)
+                    :foreground (face-foreground 'lm-neutral-gray)
+                    :background (face-background 'lm-neutral-gray)
                     :overline nil
                     :underline nil
 		    :inherit nil
@@ -96,19 +95,19 @@ RIGHT-INFO: string."
   (let* ((flag (cond (status
 		      (propertize status 'face status-face))
 		     (buffer-read-only
-		      (propertize " RO " 'face 'luna-warm-gray))
+		      (propertize " RO " 'face 'lm-warm-gray))
 		     ((and buffer-file-name (buffer-modified-p))
-		      (propertize " ** " 'face 'luna-peach-red))
-		     (t (propertize " RW " 'face 'luna-warm-gray))))
+		      (propertize " ** " 'face 'lm-peach-red))
+		     (t (propertize " RW " 'face 'lm-warm-gray))))
 	 (buffer-name (propertize (format-mode-line "%b")
-				  'face 'luna-deep-state-olive-bold))
+				  'face 'lm-deep-state-olive-bold))
          (mode-name   (format-mode-line "%m"))
          (branch      (vcs-get-branch))
 	 (branch-name (if branch (concat ", "
-                       (propertize branch 'face 'luna-neutral-gray))))
+                       (propertize branch 'face 'lm-neutral-gray))))
 	 (modal-mode (if (modal-mode-p)
 			 (concat " [" (propertize (modal-mode-string)
-						  'face 'luna-andover-green)
+						  'face 'lm-andover-green)
 				 "]") ""))
 	 (position    (format-mode-line "%l:%c"))
 	 (current-mode (concat "(" mode-name branch-name ")" modal-mode))
@@ -151,12 +150,12 @@ RIGHT-INFO: string."
 	      (eq (window-in-direction 'below) (minibuffer-window))
 	      (not (window-in-direction 'below)))
 	  (with-current-buffer (window-buffer window)
-	    (setq mode-line-format (luna-modeline)))
+	    (setq mode-line-format (lm-modeline)))
 	(with-current-buffer (window-buffer window)
- 	  (setq mode-line-format (luna-modeline)))))))
+ 	  (setq mode-line-format (lm-modeline)))))))
 (add-hook 'window-configuration-change-hook 'lm-headerline-update-windows)
 
-;; (defun luna-modeline ()
+;; (defun lm-modeline ()
 ;;   "Modeline."
 ;;   ;; Set modeline
 ;;   (setq
@@ -192,9 +191,9 @@ RIGHT-INFO: string."
 ;; 	    middle
 ;;             (list (format (make-string right-space ?\-) ""))
 ;;             right))))
-;; (luna-modeline)
+;; (lm-modeline)
 
-(defun luna-modeline ()
+(defun lm-modeline ()
   "Modeline."
   (list '(:eval
 	  (if (region-active-p)
@@ -211,7 +210,7 @@ RIGHT-INFO: string."
 	    "%-"))))
 
 (setq eshell-status-in-modeline nil)
-(setq-default mode-line-format (luna-modeline))
+(setq-default mode-line-format (lm-modeline))
 
 (lm-headerline)
 
@@ -233,5 +232,5 @@ RIGHT-INFO: string."
 ;; -----------------------------------------------
 
 
-(provide 'luna-modeline)
-;;; luna-modeline.el ends here
+(provide 'lm-modeline)
+;;; lm-modeline.el ends here

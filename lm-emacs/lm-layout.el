@@ -1,8 +1,7 @@
-;;; luna-layout.el --- Layout configurations.
+;;; lm-layout.el --- Layout configurations.
 
 ;; -----------------------------------------------
-;; File: Luna Emacs Style Configuration <luna-layout.el>
-;; Project: Luna Emacs
+;; Project: lm-emacs
 ;; Author: Jackson Benete Ferreira
 ;; Contact: <jacksonbenete@gmail.com>
 ;; -----------------------------------------------
@@ -15,49 +14,49 @@
 
 ;;; Code:
 
-(defgroup luna nil
-  "Faces for the luna customization"
+(defgroup lm nil
+  "Faces for the lm customization"
   :group 'emacs)
 
-(defface luna-neutral-gray nil
+(defface lm-neutral-gray nil
   ""
-  :group 'luna)
-(set-face-attribute 'luna-neutral-gray nil
+  :group 'lm)
+(set-face-attribute 'lm-neutral-gray nil
 		    :foreground "#b5d1cc")
 
-(defface luna-mineral-gray nil
+(defface lm-mineral-gray nil
   ""
-  :group 'luna)
-(set-face-attribute 'luna-mineral-gray nil
+  :group 'lm)
+(set-face-attribute 'lm-mineral-gray nil
 		    :foreground "#9fc2b2")
 
-(defface luna-warm-gray nil
+(defface lm-warm-gray nil
   ""
-  :group 'luna)
-(set-face-attribute 'luna-warm-gray nil
+  :group 'lm)
+(set-face-attribute 'lm-warm-gray nil
 		    :foreground "#9cb29e")
-(defface luna-peach-red nil
+(defface lm-peach-red nil
   ""
-  :group 'luna)
-(set-face-attribute 'luna-peach-red nil
+  :group 'lm)
+(set-face-attribute 'lm-peach-red nil
 		    :foreground "#ff3319")
-(defface luna-deep-state-olive nil
+(defface lm-deep-state-olive nil
   ""
-  :group 'luna)
-(set-face-attribute 'luna-deep-state-olive nil
+  :group 'lm)
+(set-face-attribute 'lm-deep-state-olive nil
 		    :foreground "#172713")
 
-(defface luna-deep-state-olive-bold nil
+(defface lm-deep-state-olive-bold nil
   ""
-  :group 'luna)
-(set-face-attribute 'luna-deep-state-olive-bold nil
+  :group 'lm)
+(set-face-attribute 'lm-deep-state-olive-bold nil
 		    :foreground "#172713"
 		    :weight (if (display-graphic-p) 'medium 'bold))
 
-(defface luna-andover-green nil
+(defface lm-andover-green nil
   ""
-  :group 'luna)
-(set-face-attribute 'luna-andover-green nil
+  :group 'lm)
+(set-face-attribute 'lm-andover-green nil
 		    :foreground "#5c8a73")
 
 ;;; Layout definitions
@@ -123,7 +122,7 @@
                       " *Minibuf-1*" " *Echo Area 1*"))
   (when (get-buffer buffer)
     (with-current-buffer buffer
-      (face-remap-add-relative 'default 'luna-andover-green))))
+      (face-remap-add-relative 'default 'lm-andover-green))))
 
 ;;; Minibuffer background
 ;; (dolist (buf (list " *Minibuf-0*" " *Echo Area 0*"
@@ -134,6 +133,6 @@
 ;; -----------------------------------------------
 
 
-(provide 'luna-layout)
+(provide 'lm-layout)
 
-;;; luna-layout.el ends here
+;;; lm-layout.el ends here

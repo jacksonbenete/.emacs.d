@@ -1,17 +1,18 @@
-;; -----------------------------------------------
-;; File: Luna Emacs Key Bindings
-;; Project: Luna Emacs
+;;; lm-keys.el --- Luna Emacs Key Bindings
+
+;; Project: lm-emacs
 ;; Author: Jackson Benete Ferreira
 ;; Contact: <jacksonbenete@gmail.com>
 ;; -----------------------------------------------
 
-;;; About:
+;;; Commentary:
 ;; -----------------------------------------------
 ;; Key Bindings for QoL Improvements
 ;; every keybinding is first unset
 ;; So it will prevent conflict and also offer
 ;; an overview of all keys in use.
 ;; -----------------------------------------------
+;;; Code:
 
 ;;; Unset Keys:
 ;; -----------------------------------------------

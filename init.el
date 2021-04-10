@@ -1,8 +1,8 @@
 ;;; init.el --- Emacs configuration file.
 
 ;; -------------------------------------------------------------------
-;; File: Luna Emacs Configuration
-;; Project: Luna Emacs
+;; File: lm Emacs Configuration
+;; Project: lm Emacs
 ;; Author: Jackson Benete Ferreira
 ;; Contact: <jacksonbenete@gmail.com>
 ;; -------------------------------------------------------------------
@@ -13,9 +13,7 @@
 ;; [https://github.com/rememberYou/.emacs.d]
 ;; [https://emacs.nasy.moe]
 ;; [https://github.com/zamansky/dot-emacs]
-;; And is now wrote on top of elegant-emacs and nano-emacs:
 ;; [https://github.com/rougier/elegant-emacs]
-;; [https://github.com/rougier/nano-emacs]
 ;; -------------------------------------------------------------------
 
 ;;; Code:
@@ -74,64 +72,40 @@
 (setq default-directory (concat (getenv "HOME") "/"))
 
 
-;;; Luna Libraries:
-(add-to-list 'load-path "~/.emacs.d/luna/")
+;;; lm Libraries:
+(add-to-list 'load-path "~/.emacs.d/lm-emacs/")
 
 
 ;;; Docker CLI Emacs
 ;; -----------------------------------------------
 (when (not (display-graphic-p))
-  (load-library "luna-docker"))
+  (load-library "lm-docker"))
 
 
-;;; Luna Theme
+;;; lm Theme
 ;; -----------------------------------------------
-(require 'luna-layout)
-(setq custom-theme-directory "~/.emacs.d/luna/")
-(load-theme 'luna t)
-(require 'luna-modeline)
+(require 'lm-layout)
+(setq custom-theme-directory "~/.emacs.d/lm-emacs/")
+(load-theme 'lm-gui t)
+(require 'lm-modeline)
 ;; -----------------------------------------------
 
-;;; Luna Dashboard
-(add-to-list 'load-path "~/.emacs.d/lm-dashboard")
-(when (display-graphic-p)
-  (require 'lm-dashboard)
-  (lm-dashboard-startup-hook))
+;;; lm Dashboard
+(when (file-directory-p "~/.emacs.d/lm-dashboard")
+  (add-to-list 'load-path "~/.emacs.d/lm-dashboard")
+  (when (display-graphic-p)
+    (require 'lm-dashboard)
+    (lm-dashboard-startup-hook)))
 
 ;;; Emacs Libraries:
-(load-library "luna-emacs-packages")
+(load-library "lm-emacs-packages")
 
 ;;; Third Packages:
-(load-library "luna-third-packages")
+(load-library "lm-third-packages")
 
 ;;; Custom Keybindings
-(load-library "luna-keys")
+(load-library "lm-keys")
 
-;;; RPG modes
-;;(add-to-list 'load-path "~/.emacs.d/rpg")
-;;(require 'roll)
-;;(global-set-key (kbd "C-0") 'roll-save)
-
-;;; Checksum
-;;(add-to-list 'load-path "~/.emacs.d/emacs-checksum")
-;;(require 'checksum)
-
-;;; Horn
-;;(add-to-list 'load-path "~/.emacs.d/emacs-horn")
-;;(require 'horn)
-;;(setq horn-default-list
-;;      '(("Dashboard" . lm-dashboard-refresh)
-;;	("New Scratch" . create-scratch-buffer)
-	;; ("Shell" . shell)
-;;	("Shell" . eshell)
-;;	("Deft" . deft)
-;;	("Magit" . magit)
-;;	("roll-save" . roll-save)
-;;	("rss" . newsticker-treeview)
-;;	("Slime" . slime)
-;;	("checksum" . checksum)
-;;	("gnus" . gnus)))
-;;(global-set-key (kbd "C-x C-x") 'horn-call-mode)
 
 ;;; Ignore active buffer while leaving
 (setq confirm-kill-processes nil)

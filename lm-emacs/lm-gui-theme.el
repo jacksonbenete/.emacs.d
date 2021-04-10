@@ -1,16 +1,18 @@
+;;; lm-theme.el --- Provides a theme for 256+ colors
 ;; -----------------------------------------------
-;; File: Luna Emacs Style Configuration <luna-theme.el>
-;; Project: Luna Emacs
+;; Project: lm-emacs
 ;; Author: Jackson Benete Ferreira
 ;; Contact: <jacksonbenete@gmail.com>
 ;;
-;; Commentary:
+;;; Commentary:
 ;; This theme offers very clear colors.
 ;; White background and gray default foreground.
 ;; -----------------------------------------------
 
-(deftheme luna
-  "Theme for luna.")
+;;; Code:
+
+(deftheme lm-gui
+  "Theme for lm-emacs.")
 
 ;;; Theme
 ;; -----------------------------------------------
@@ -54,7 +56,7 @@
       (laelia-pink "#cc85d1")
       (veronia-purple "#7e3075"))
   (custom-theme-set-faces
-   'luna
+   'lm-gui
    ;; Text
    `(default ((,class :font ,font :background ,background :foreground ,foreground)))
    `(cursor ((,class :foreground ,foreground)))
@@ -96,5 +98,5 @@
    ))
    
 
-(provide-theme 'luna)
-(provide 'luna-theme)
+(provide-theme 'lm-gui)
+(provide 'lm-gui-theme)

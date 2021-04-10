@@ -1,8 +1,7 @@
 ;;; luna-third-packages --- Third party packages installed by Elpa/Melpa
 
 ;; -----------------------------------------------
-;; File: Luna Emacs Third Packages
-;; Project: Luna Emacs
+;; Project: lm-emacs
 ;; Author: Jackson Benete Ferreira
 ;; Contact: <jacksonbenete@gmail.com>
 

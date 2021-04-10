@@ -1,4 +1,4 @@
-;;; luna-docker.el --- Configuration for CLI on Docker lfex/lfe
+;;; lm-docker.el --- Configuration for CLI on Docker lfex/lfe
 ;;; Commentary:
 ;;
 ;; For use with lfex/lfe docker container
