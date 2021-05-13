@@ -1,0 +1,24 @@
+{application, els_lsp, [
+    {description, "Erlang LS - Language Server Protocol"},
+    {vsn, git},
+    {registered, []},
+    {mod, {els_app, []}},
+    {applications, [
+        kernel,
+        stdlib,
+        docsh,
+        elvis_core,
+        rebar3_format,
+        tdiff,
+        ephemeral,
+        uuid,
+        getopt,
+        erlfmt,
+        els_core
+    ]},
+    {env, []},
+    {modules, []},
+    {maintainers, []},
+    {licenses, ["Apache 2.0"]},
+    {links, []}
+]}.
