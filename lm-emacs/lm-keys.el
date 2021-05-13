@@ -17,8 +17,8 @@
 ;;; Unset Keys:
 ;; -----------------------------------------------
 (global-unset-key (kbd "C-x C-k"))        ; Kill current buffer without prompt
-(global-unset-key (kbd "C-,"))            ; Jump to BoF
-(global-unset-key (kbd "C-."))            ; Jump to EoF
+;; (global-unset-key (kbd "C-,"))            ; Jump to BoF
+;; (global-unset-key (kbd "C-."))            ; Jump to EoF
 (global-unset-key (kbd "C-y"))            ; Yank and newline
 (global-unset-key (kbd "M-y"))            ; Yank
 (global-unset-key (kbd "C-`"))            ; Delete other windows
@@ -37,7 +37,7 @@
 (global-unset-key (kbd "<backtab>"))      ; Change other window C-x o
 (global-unset-key (kbd "C-<backspace>"))  ; Custom delete function
 (global-unset-key (kbd "C-_"))            ; Create block comment ;;--------- etc
-(global-unset-key (kbd "C-x C-x"))        ; Alternative to M-x
+;; (global-unset-key (kbd "C-x C-x"))        ; Alternative to M-x
 (global-unset-key (kbd "M-<SPC>"))        ; Set Mark Region (for CLI)
 ;; (global-unset-key (kbd ""))
 
@@ -101,8 +101,8 @@
 
 ;;; Remap Jump to EOF/BOF
 ;; -----------------------------------------------
-(global-set-key (kbd "C-,") 'beginning-of-buffer)
-(global-set-key (kbd "C-.") 'end-of-buffer)
+;; (global-set-key (kbd "C-,") 'beginning-of-buffer)
+;; (global-set-key (kbd "C-.") 'end-of-buffer)
 ;; -----------------------------------------------
 
 

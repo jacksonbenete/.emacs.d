@@ -72,6 +72,19 @@
 (setq default-directory (concat (getenv "HOME") "/"))
 
 
+;; Define a utility function which either installs a package (if it is
+;; missing) or requires it (if it already installed).
+(defun package-require (pkg &optional require-name)
+  "Install a package only if it's not already installed."
+  (when (not (package-installed-p pkg))
+    (package-install pkg))
+  (if require-name
+      (require require-name)
+    (require pkg)))
+
+;; Dash is needed for a lot of packages
+(package-require 'dash)
+
 ;;; lm Libraries:
 (add-to-list 'load-path "~/.emacs.d/lm-emacs/")
 
@@ -86,7 +99,9 @@
 ;; -----------------------------------------------
 (require 'lm-layout)
 (setq custom-theme-directory "~/.emacs.d/lm-emacs/")
-(load-theme 'lm-gui t)
+(if (not (display-graphic-p))
+    (load-theme 'lm-cli t)
+  (load-theme 'lm-gui t))
 (require 'lm-modeline)
 ;; -----------------------------------------------
 
@@ -106,6 +121,8 @@
 ;;; Custom Keybindings
 (load-library "lm-keys")
 
+;;; Programming
+(load-library "lm-programming")
 
 ;;; Ignore active buffer while leaving
 (setq confirm-kill-processes nil)
@@ -115,12 +132,12 @@
 (setq mode-require-final-newline nil)
 
 ;;; Swap [] to ()
-(keyboard-translate ?\[ ?\()
-(keyboard-translate ?\] ?\))
-(keyboard-translate ?\{ ?\[)
-(keyboard-translate ?\} ?\])
-(keyboard-translate ?\( ?\{)
-(keyboard-translate ?\) ?\})
+;; (keyboard-translate ?\[ ?\()
+;; (keyboard-translate ?\] ?\))
+;; (keyboard-translate ?\{ ?\[)
+;; (keyboard-translate ?\} ?\])
+;; (keyboard-translate ?\( ?\{)
+;; (keyboard-translate ?\) ?\})
 ;; -------------------------------------------------------------------
 
 
@@ -151,8 +168,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (docker-tramp lfe-mode pdf-tools markdown-preview-mode indium tide emmet-mode add-node-modules-path web-mode racket-mode geiser elisp-slime-nav cider clojure-mode undo-tree which-key flycheck easy-kill hyperbole icomplete-vertical slime-company eshell-bookmark tramp use-package tracking move-text magit helpful god-mode elpher diff-hl deft dashboard))))
+   '(dash lsp-ui lsp-mode company-distel company-erlang flycheck-tip popup docker-tramp lfe-mode pdf-tools markdown-preview-mode indium tide emmet-mode add-node-modules-path web-mode racket-mode geiser elisp-slime-nav cider clojure-mode undo-tree which-key flycheck easy-kill hyperbole icomplete-vertical slime-company eshell-bookmark tramp use-package tracking move-text magit helpful god-mode elpher diff-hl deft dashboard)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
