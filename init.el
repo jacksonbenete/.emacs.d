@@ -168,7 +168,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(dash lsp-ui lsp-mode company-distel company-erlang flycheck-tip popup docker-tramp lfe-mode pdf-tools markdown-preview-mode indium tide emmet-mode add-node-modules-path web-mode racket-mode geiser elisp-slime-nav cider clojure-mode undo-tree which-key flycheck easy-kill hyperbole icomplete-vertical slime-company eshell-bookmark tramp use-package tracking move-text magit helpful god-mode elpher diff-hl deft dashboard)))
+   '(edts dash lsp-ui lsp-mode company-distel company-erlang flycheck-tip popup docker-tramp lfe-mode pdf-tools markdown-preview-mode indium tide emmet-mode add-node-modules-path web-mode racket-mode geiser elisp-slime-nav cider clojure-mode undo-tree which-key flycheck easy-kill hyperbole icomplete-vertical slime-company eshell-bookmark tramp use-package tracking move-text magit helpful god-mode elpher diff-hl deft dashboard)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
