@@ -16,10 +16,7 @@
 
 ;;; Theme
 ;; -----------------------------------------------
-;; Set foreground to Blue Grey / L800
-;; Easier on eyes than pure black letters.
-(set-foreground-color "#37474F")
-;; Set background to White
+;; Set background to Black
 (set-background-color "#000000")
 ;; -----------------------------------------------
 
@@ -28,8 +25,8 @@
 
 (let ((class '((class color) (min-colors 89)))
       (font (if window-system "InputMono 9" "Input Mono 9"))
-      (background "#FFFFFF")
-      (foreground "#37474F")
+      (background "#000000")
+      (foreground "#FFFFFF")
       (highlight-line "#f0f0f0")
       (cli-highlight-line-foreground "#000000")
       (cli-highlight-line-background "#FFFFFF")
@@ -66,8 +63,7 @@
    `(default ((,class :font ,font :background ,background :foreground ,foreground)))
    `(cursor ((,class :foreground ,foreground)))
    ;; Highlight and Selection
-   `(hl-line ((,class :foreground ,cli-highlight-line-foreground
-		      :background ,cli-highlight-line-background)))
+   `(hl-line ((,class :background ,cli-highlight-line-background)))
    `(region ((,class :foreground ,highlight-region-fg
 		     :background ,highlight-region-bg)))
    ;; What is this for?
