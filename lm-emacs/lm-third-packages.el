@@ -243,6 +243,7 @@ The arguments and expected return value are as specified for
 
 (require 'god-mode)
 (global-set-key (kbd "<escape>") #'god-local-mode)
+(global-set-key (kbd "C-x :") #'god-local-mode)
 (define-key god-local-mode-map (kbd "i") #'god-local-mode)
 
 ;; To prevend god-mode in a major-mode like in dired, you would
